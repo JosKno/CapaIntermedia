@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand img {
+    border: 2px solid #fff;
+}
+
+/* Aplica la nueva fuente a todos los encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo del carrusel */
+.carousel-img {
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+/* Texto del carrusel */
+.carousel-caption h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Estilos de las tarjetas (diseño de cuadrícula) */
+.card-hover {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img-top {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-hover:hover .overlay {
+    opacity: 1;
+}
+
+.card-hover:hover .card-img-top {
+    filter: brightness(0.5);
+}
+
+.overlay-text {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.btn-outline-light {
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* --- Modo Oscuro --- */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #1f1f1f !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .card-body {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode .card-text {
+    color: #b0b0b0;
+}
+
+body.dark-mode .btn-dark,
+body.dark-mode .dropdown-menu {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .dropdown-item {
+    color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-item:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-mode .form-control {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #a0a0a0;
+}
+
+body.dark-mode .footer {
+    background-color: #1f1f1f !important;
+    border-top: 1px solid #333;
+}
+
+body.dark-mode .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark-mode .nav-link:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+body.dark-mode .link-dark {
+    color: #e0e0e0 !important;
+}

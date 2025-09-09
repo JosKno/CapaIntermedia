@@ -1,0 +1,80 @@
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.profile-img:hover {
+    transform: scale(1.05);
+}
+.profile-card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.user-post-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+body.dark-mode .profile-card,
+body.dark-mode .post-card,
+body.dark-mode .modal-content {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-color: #444;
+}
+body.dark-mode .profile-img {
+    border-color: #121212;
+}
+body.dark-mode .profile-card .list-unstyled li {
+    color: #b0b0b0;
+}
+body.dark-mode .alert-info {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    border-color: #34495e;
+}
+body.dark-mode .modal-header,
+body.dark-mode .modal-footer {
+    border-color: #444;
+}
+body.dark-mode .modal-title {
+    color: #e0e0e0;
+}
+body.dark-mode .btn-close {
+    filter: invert(1);
+}
+body.dark-mode .badge {
+    color: #e0e0e0 !important;
+    background-color: #444 !important;
+}
+body.dark-mode .comment {
+    color: #b0b0b0 !important;
+}
+body.dark-mode .comment .fw-bold {
+    color: #e0e0e0 !important;
+}
+.post-media-container {
+    width: 100%;
+    max-height: 400px; /* Tamaño máximo para el contenedor multimedia */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-media-container img,
+.post-media-container video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+body.dark-mode .form-select,
+body.dark-mode .form-control {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border-color: #444;
+}

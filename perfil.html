@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario - SportsCenter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_profile.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="https://www.record.com.mx/sites/default/files/articulos/2023/05/17/fwywk8ragae8min-23.jpeg" alt="Logo Mundial 2016" width="30" height="30" class="me-2 rounded-circle"> 
+                SportsCenter
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                
+                <form class="d-flex me-4" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar publicaciones..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="publicar.html">Publicar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Administrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registrarse.html">Registrarse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="perfil.html">Perfil</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <button id="darkModeToggle" class="btn btn-outline-light ms-2" title="Alternar modo oscuro">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 flex-grow-1">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card profile-card">
+                    <div class="card-body text-center">
+                        <img src="https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=1333787587186000000" alt="Foto de Perfil" class="profile-img mb-3">
+                        <h4 class="card-title fw-bold">Jose Cano Puga</h4>
+                        <p class="text-muted">@jose.cap</p>
+                        <hr>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-calendar-alt me-2"></i> Fecha de nacimiento: <span id="user-dob">05/10/1999</span></li>
+                            <li><i class="fas fa-venus-mars me-2"></i> Género: <span id="user-gender">Masculino</span></li>
+                            <li><i class="fas fa-globe-americas me-2"></i> País de nacimiento: <span id="user-country">México</span></li>
+                            <li><i class="fas fa-flag me-2"></i> Nacionalidad: <span id="user-nationality">Mexicana</span></li>
+                            <li><i class="fas fa-envelope me-2"></i> Correo electrónico: <span id="user-email">jose.cap@sports.com</span></li>
+                        </ul>
+                        <button class="btn btn-dark mt-3 w-100" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="fas fa-user-edit me-2"></i>Editar Perfil</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <h3 class="fw-bold mb-4">Mis Publicaciones</h3>
+                <div class="alert alert-info text-center" role="alert">
+                    Aún no has realizado ninguna publicación. ¡Anímate a compartir!
+                </div>
+
+                <div class="card mb-4 post-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000" alt="Foto de Perfil" class="user-post-img rounded-circle me-3">
+                            <div>
+                                <h5 class="mb-0 fw-bold">Jose Cano Puga</h5>
+                                <small class="text-muted">Publicado el 9 de septiembre de 2025</small>
+                            </div>
+                        </div>
+                        <h4 class="card-title fw-bold">¡Qatar 2022, la mejor final de todos los tiempos!</h4>
+                        <p class="card-text">Este video captura mi momento favorito de la final de Qatar 2022. ¡Una jugada increíble!</p>
+                        
+                        <div class="post-details mb-3">
+                            <span class="badge bg-primary me-2">Categoría: Jugadas</span>
+                            <span class="badge bg-info me-2">Mundial: Catar 2022</span>
+                            <span class="badge bg-success">Selección: Argentina</span>
+                        </div>
+
+                        <div class="post-media-container mb-3">
+                           <img src="https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=1333787587186000000">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center text-muted border-top border-bottom py-2 mb-3">
+                            <div><i class="fas fa-eye me-1"></i> 1,250 vistas</div>
+                            <div><i class="fas fa-thumbs-up me-1"></i> 980 likes</div>
+                            <div><i class="fas fa-comment me-1"></i> 110 comentarios</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <h6 class="fw-bold">Usuarios que dieron like:</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-secondary">Carlos</span>
+                                <span class="badge bg-secondary">Ana</span>
+                                <span class="badge bg-secondary">Luis</span>
+                                <span class="badge bg-secondary">Sofía</span>
+                            </div>
+                        </div>
+                        
+                        <div class="comments-section">
+                            <h6 class="fw-bold">Comentarios:</h6>
+                            <div class="comment mb-2">
+                                <span class="fw-bold">Usuario1:</span> ¡Totalmente de acuerdo! La mejor final que he visto.
+                            </div>
+                            <div class="comment mb-2">
+                                <span class="fw-bold">Usuario2:</span> Se me puso la piel de gallina al ver ese gol.
+                            </div>
+                            <div class="comment mb-2">
+                                <span class="fw-bold">Usuario3:</span> ¿Alguien sabe la fecha exacta?
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProfileForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="edit-nombre" class="form-label">Nombre completo</label>
+                                    <input type="text" class="form-control" id="edit-nombre" placeholder="Nombre completo" value="Jose Cano Puga" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit-fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+                                    <input type="date" class="form-control" id="edit-fechaNacimiento" value="1999-10-05" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit-genero" class="form-label">Género</label>
+                                    <select class="form-select" id="edit-genero" required>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="femenino">Femenino</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit-paisNacimiento" class="form-label">País de nacimiento</label>
+                                    <input type="text" class="form-control" id="edit-paisNacimiento" placeholder="País de nacimiento" value="México" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit-nacionalidad" class="form-label">Nacionalidad</label>
+                                    <input type="text" class="form-control" id="edit-nacionalidad" placeholder="Nacionalidad" value="Mexicana" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="edit-email" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="edit-email" placeholder="Correo electrónico" value="jose.cap@sports.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit-password" class="form-label">Contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text toggle-password" data-target="#edit-password"><i class="fas fa-eye"></i></span>
+                                        <input type="password" class="form-control" id="edit-password" placeholder="Nueva contraseña" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit-confirm-password" class="form-label">Confirmar Contraseña</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text toggle-password" data-target="#edit-confirm-password"><i class="fas fa-eye"></i></span>
+                                        <input type="password" class="form-control" id="edit-confirm-password" placeholder="Confirma tu nueva contraseña" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="edit-foto" class="form-label">Foto de perfil</label>
+                                    <input class="form-control" type="file" id="edit-foto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-dark">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">© 2025 SportsCenter. Todos los derechos reservados.</p>
+            <div>
+                <a href="https://www.facebook.com/fifa" class="text-white mx-2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/fifacom" class="text-white mx-2" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/fifaworldcup" class="text-white mx-2" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/fifa" class="text-white mx-2" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/page-specific.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

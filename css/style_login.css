@@ -9,6 +9,15 @@
     border-left: none;
     cursor: pointer;
 }
+.login-image-container {
+    height: 100%;
+}
+.login-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 body.dark-mode .form-container {
     background-color: #1f1f1f !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -23,15 +32,21 @@ body.dark-mode .input-group-text {
 }
 body.dark-mode .form-container h2 {
     color: #e0e0e0 !important;
-   
 }
-
-
-body.dark-mode .form-container option {
+body.dark-mode .form-container .text-dark {
     color: #e0e0e0 !important;
-     background-color: #1f1f1f !important;
 }
-
+body.dark-mode .form-container .link-dark {
+    color: #e0e0e0 !important;
+}
 body.dark-mode .form-container p {
     color: #e0e0e0 !important;
+}
+
+/* Modo oscuro para la imagen de login */
+body.dark-mode .login-image-container {
+    background-color: #121212;
+}
+body.dark-mode .login-image {
+    filter: brightness(0.5); /* Oscurece la imagen en modo oscuro */
 }

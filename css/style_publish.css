@@ -18,7 +18,10 @@
 .preview-box video {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* This will scale the media to fit within the box without distortion */
+    object-fit: contain;
+}
+textarea {
+    resize: none; /* Deshabilita el redimensionamiento manual */
 }
 body.dark-mode .form-container {
     background-color: #1f1f1f !important;
@@ -53,7 +56,6 @@ body.dark-mode .preview-box {
     background-color: #dc3545 !important;
     border-color: #dc3545 !important;
 }
-body.dark-mode .form-container h2 {
-    color: #e0e0e0 !important;
-   
+textarea {
+    resize: none;
 }

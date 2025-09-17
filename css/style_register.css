@@ -6,7 +6,7 @@
 }
 .input-group-text {
     background-color: transparent;
-    border-right: none; /* Estilo para que el ícono esté en el lado izquierdo */
+    border-right: none;
     cursor: pointer;
 }
 .toggle-password {
@@ -16,35 +16,41 @@
 .form-container input[type="file"] {
     cursor: pointer;
 }
+.register-image-container {
+    height: 100%;
+}
+.register-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Modo Oscuro */
 body.dark-mode .form-container {
     background-color: #1f1f1f !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 body.dark-mode .form-label {
-    color: #e0e0e0;
+    color: #e0e0e0 !important;
 }
 body.dark-mode .input-group-text {
-    background-color: #2c2c2c;
-    color: #e0e0e0;
-    border-color: #444;
+    background-color: #2c2c2c !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
 }
 body.dark-mode .form-container h2 {
     color: #e0e0e0 !important;
-    
 }
 body.dark-mode .form-container p {
     color: #e0e0e0 !important;
 }
-
-body.dark-mode .form-container label{
-  color: #e0e0e0 !important;
-     background-color: #1f1f1f !important;
+body.dark-mode .form-container label {
+    color: #e0e0e0 !important;
+    background-color: transparent !important;
 }
-
-
 body.dark-mode .form-container option {
     color: #e0e0e0 !important;
-     background-color: #1f1f1f !important;
+    background-color: #1f1f1f !important;
 }
 body.dark-mode .form-text {
     color: #b0b0b0 !important;
@@ -54,4 +60,13 @@ body.dark-mode .form-control {
     background-color: #2c2c2c;
     color: #e0e0e0;
     border-color: #444;
+}
+body.dark-mode .form-select option {
+    background-color: #1f1f1f;
+}
+body.dark-mode .register-image-container {
+    background-color: #121212;
+}
+body.dark-mode .register-image {
+    filter: brightness(0.5);
 }

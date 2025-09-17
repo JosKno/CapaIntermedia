@@ -14,16 +14,6 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilos para el botón de editar */
-.btn-outline-dark {
-    color: #343a40;
-    border-color: #343a40;
-}
-.btn-outline-dark:hover {
-    color: #fff;
-    background-color: #343a40;
-}
-
 /* Estilos para los botones de aprobar/rechazar */
 .btn-success, .btn-danger {
     font-size: 0.8rem;
@@ -34,6 +24,7 @@
 .post-media-container img, .post-media-container video {
     max-height: 400px;
     object-fit: contain;
+    width: 100%;
 }
 
 /* Modo Oscuro para la página de administrador */
@@ -85,4 +76,7 @@ body.dark-mode .btn-outline-dark {
 body.dark-mode .btn-outline-dark:hover {
     color: #121212;
     background-color: #e0e0e0;
+}
+textarea {
+    resize: none;
 }

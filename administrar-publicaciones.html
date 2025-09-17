@@ -48,7 +48,7 @@
 
     <main class="container my-5 flex-grow-1">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="fw-bold">Gestión de Publicaciones</h1>
+            <h1 class="fw-bold">Gestión de Publicaciones Pendientes</h1>
         </div>
 
         <div class="card p-4">
@@ -59,33 +59,32 @@
                             <th>Título</th>
                             <th>Autor</th>
                             <th>Fecha de Publicación</th>
-                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr data-title="El gol de Götze" data-author="Juan Pérez" data-date="2025-09-08" data-content="Una descripción detallada de la publicación..." data-media-src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/2Z6MBEW4PFBJHK5MKC33QFI74M.jpg" data-category="Jugadas" data-worldcup="Brasil 2014">
                             <td>El gol de Götze</td>
                             <td>Juan Pérez</td>
                             <td>2025-09-08</td>
-                            <td><span class="badge bg-warning text-dark">Pendiente</span></td>
                             <td>
-                                <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#viewPostModal">
+                                <button class="btn btn-sm btn-outline-dark me-2 view-btn" data-bs-toggle="modal" data-bs-target="#viewPostModal">
                                     <i class="fas fa-eye"></i>
                                 </button>
-                                <button class="btn btn-sm btn-success me-2"><i class="fas fa-check"></i> Aprobar</button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Rechazar</button>
+                                <button class="btn btn-sm btn-success me-2 approve-btn"><i class="fas fa-check"></i> Aprobar</button>
+                                <button class="btn btn-sm btn-danger reject-btn"><i class="fas fa-times"></i> Rechazar</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>La jugada de Messi</td>
-                            <td>Sofía Gómez</td>
-                            <td>2025-09-07</td>
-                            <td><span class="badge bg-success">Aprobada</span></td>
+                        <tr data-title="Mi momento favorito del Mundial" data-author="Carlos S." data-date="2025-09-09" data-content="La atajada de Neuer en el partido contra Argelia fue impresionante." data-media-src="https://elbocon.pe/resizer/gh2TYk09_4x4-CVcXG1KMepHYZA=/1200x900/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/7YQ3SJIIEFCTVE56VMCBZJPASI.jpg" data-category="Jugadas" data-worldcup="Brasil 2014">
+                            <td>Mi momento favorito del Mundial</td>
+                            <td>Carlos S.</td>
+                            <td>2025-09-09</td>
                             <td>
-                                <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#viewPostModal">
+                                <button class="btn btn-sm btn-outline-dark me-2 view-btn" data-bs-toggle="modal" data-bs-target="#viewPostModal">
                                     <i class="fas fa-eye"></i>
                                 </button>
+                                <button class="btn btn-sm btn-success me-2 approve-btn"><i class="fas fa-check"></i> Aprobar</button>
+                                <button class="btn btn-sm btn-danger reject-btn"><i class="fas fa-times"></i> Rechazar</button>
                             </td>
                         </tr>
                     </tbody>
@@ -102,17 +101,16 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <h4 class="fw-bold mb-3">El gol de Götze en la final de Brasil 2014</h4>
-                    <p class="text-muted">Por: Juan Pérez | Categoría: Jugadas | Mundial: Brasil 2014</p>
-                    <p>Una descripción detallada de la publicación, donde el usuario explica el contexto y la importancia del video/imagen que subió.</p>
+                    <h4 class="fw-bold mb-3" id="post-modal-title"></h4>
+                    <p class="text-muted" id="post-modal-meta"></p>
+                    <p id="post-modal-content"></p>
                     
-                    <div class="post-media-container mb-3">
-                        <img src="https://via.placeholder.com/600x400?text=Imagen+de+la+Publicación" class="img-fluid rounded">
-                    </div>
+                    <div class="post-media-container mb-3" id="post-modal-media">
+                        </div>
 
                     <div class="d-flex justify-content-end gap-2 mt-4">
-                        <button type="button" class="btn btn-sm btn-success"><i class="fas fa-check"></i> Aprobar</button>
-                        <button type="button" class="btn btn-sm btn-danger"><i class="fas fa-times"></i> Rechazar</button>
+                        <button type="button" class="btn btn-sm btn-success approve-btn-modal"><i class="fas fa-check"></i> Aprobar</button>
+                        <button type="button" class="btn btn-sm btn-danger reject-btn-modal"><i class="fas fa-times"></i> Rechazar</button>
                     </div>
                 </div>
             </div>
@@ -133,5 +131,6 @@
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/page-specific.js"></script>
 </body>
 </html>

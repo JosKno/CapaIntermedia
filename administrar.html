@@ -13,7 +13,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="administrar.html">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="https://www.record.com.mx/sites/default/files/articulos/2023/05/17/fwywk8ragae8min-23.jpeg" alt="Logo Mundial 2016" width="30" height="30" class="me-2 rounded-circle"> 
                 SportsCenterAdmin
             </a>
@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#categorias-section">Categorías</a>
+                        <a class="nav-link active" aria-current="page" href="administrar.html">Categorías</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="administrar-mundiales.html">Mundiales</a>
@@ -61,36 +61,20 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Descripción</th>
-                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Jugadas</td>
                             <td>Publicaciones sobre jugadas espectaculares de los mundiales.</td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#editCategoryModal">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                            </td>
                         </tr>
                         <tr>
                             <td>Entrevistas</td>
                             <td>Entrevistas con jugadores, entrenadores o figuras del fútbol.</td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#editCategoryModal">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                            </td>
                         </tr>
                         <tr>
                             <td>Partidos</td>
                             <td>Publicaciones sobre partidos completos o momentos clave.</td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#editCategoryModal">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -112,37 +96,11 @@
                             <input type="text" class="form-control" id="categoryName" required>
                         </div>
                         <div class="mb-3">
-                            <label for="categoryPassword" class="form-label">Contraseña de Administrador</label>
-                            <input type="password" class="form-control" id="categoryPassword" required>
+                            <label for="categoryDesc" class="form-label">Descripción</label>
+                            <textarea class="form-control" id="categoryDesc" rows="3" required></textarea>
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-dark">Guardar Categoría</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="editCategoryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editCategoryModalLabel">Editar Categoría</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="editCategoryName" class="form-label">Nombre de la Categoría</label>
-                            <input type="text" class="form-control" id="editCategoryName" value="Jugadas" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editCategoryDesc" class="form-label">Descripción</label>
-                            <textarea class="form-control" id="editCategoryDesc" rows="3">Publicaciones sobre jugadas espectaculares de los mundiales.</textarea>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <button type="submit" class="btn btn-dark">Guardar Cambios</button>
                         </div>
                     </form>
                 </div>
@@ -164,5 +122,6 @@
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/page-specific.js"></script>
 </body>
 </html>

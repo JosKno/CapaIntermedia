@@ -36,7 +36,7 @@
                         <a class="nav-link" href="publicar.html">Publicar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="administrar.html">Administrar</a>
+                        <a class="nav-link" href="#">Administrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">Iniciar Sesión</a>
@@ -45,7 +45,7 @@
                         <a class="nav-link" href="registrarse.html">Registrarse</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="perfil.html">Perfil</a>
+                        <a class="nav-link" href="#">Perfil</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <button id="darkModeToggle" class="btn btn-outline-light ms-2" title="Alternar modo oscuro">
@@ -142,18 +142,23 @@
 
             <div id="publicaciones-mundial" class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="fw-bold">Publicaciones del Mundial</h3>
-                <div class="dropdown">
-                    <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-filter me-2"></i>Filtrar por:
+                <div>
+                    <button type="button" class="btn btn-dark me-2" data-bs-toggle="modal" data-bs-target="#addPostModal">
+                        <i class="fas fa-plus"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Orden cronológico (ascendente)</a></li>
-                        <li><a class="dropdown-item" href="#">Orden cronológico (descendente)</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Más likes</a></li>
-                        <li><a class="dropdown-item" href="#">Más comentarios</a></li>
-                        <li><a class="dropdown-item" href="#">País</a></li>
-                    </ul>
+                    <div class="dropdown d-inline-block">
+                        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-filter me-2"></i>Filtrar por:
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Orden cronológico (ascendente)</a></li>
+                            <li><a class="dropdown-item" href="#">Orden cronológico (descendente)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Más likes</a></li>
+                            <li><a class="dropdown-item" href="#">Más comentarios</a></li>
+                            <li><a class="dropdown-item" href="#">País</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -214,6 +219,68 @@
         </div>
     </main>
 
+    <div class="modal fade" id="addPostModal" tabindex="-1" aria-labelledby="addPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addPostModalLabel">Crear Nueva Publicación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addPostForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="post-title" class="form-label">Título</label>
+                                    <input type="text" class="form-control" id="post-title" placeholder="Título de la publicación" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="post-categoria" class="form-label">Categoría</label>
+                                    <select class="form-select" id="post-categoria" required>
+                                        <option selected disabled value="">Selecciona una categoría</option>
+                                        <option value="jugadas">Jugadas</option>
+                                        <option value="entrevistas">Entrevistas</option>
+                                        <option value="partidos">Partidos</option>
+                                        <option value="estadisticas">Estadísticas</option>
+                                        <option value="asistentes">Asistentes</option>
+                                        <option value="incidentes">Incidentes</option>
+                                        <option value="polemicas">Polémicas</option>
+                                        <option value="sedes">Sedes</option>
+                                        <option value="cultura">Cultura</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="post-mundial" class="form-label">Mundial al que pertenece</label>
+                                    <input type="text" class="form-control" id="post-mundial" placeholder="Ej. Copa Mundial 2022" value="Brasil 2014" readonly required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="post-seleccion" class="form-label">Selección (opcional)</label>
+                                    <input type="text" class="form-control" id="post-seleccion" placeholder="Ej. Argentina">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="post-descripcion" class="form-label">Descripción</label>
+                                    <textarea class="form-control" id="post-descripcion" rows="4" placeholder="Crea una descripción..."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex flex-column justify-content-center">
+                                <div class="mb-3 w-100">
+                                    <label for="post-multimedia" class="form-label">Multimedia (Fotos o Videos)</label>
+                                    <input class="form-control" type="file" id="post-multimedia" accept="image/*,video/*" multiple required>
+                                </div>
+                                <div id="post-preview-container" class="preview-box w-100 text-center border p-3 rounded">
+                                    <p class="text-muted">Vista previa de la multimedia</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-dark">Publicar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-dark text-white py-4 mt-auto">
         <div class="container text-center">
             <p class="mb-2">© 2025 SportsCenter. Todos los derechos reservados.</p>
@@ -228,5 +295,55 @@
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/page-specific.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica para mostrar la vista previa de la multimedia en el modal
+            const multimediaInput = document.getElementById('post-multimedia');
+            const previewContainer = document.getElementById('post-preview-container');
+
+            if (multimediaInput && previewContainer) {
+                multimediaInput.addEventListener('change', function() {
+                    previewContainer.innerHTML = '';
+                    const files = this.files;
+                    if (files.length > 0) {
+                        for (const file of files) {
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                let mediaElement;
+                                if (file.type.startsWith('image/')) {
+                                    mediaElement = document.createElement('img');
+                                    mediaElement.src = e.target.result;
+                                } else if (file.type.startsWith('video/')) {
+                                    mediaElement = document.createElement('video');
+                                    mediaElement.src = e.target.result;
+                                    mediaElement.controls = true;
+                                }
+                                if (mediaElement) {
+                                    mediaElement.classList.add('img-fluid', 'rounded', 'mb-2');
+                                    previewContainer.appendChild(mediaElement);
+                                }
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    } else {
+                        previewContainer.innerHTML = '<p class="text-muted">Vista previa de la multimedia</p>';
+                    }
+                });
+            }
+
+            // Lógica para el botón de publicar en el modal
+            const addPostForm = document.getElementById('addPostForm');
+            if (addPostForm) {
+                addPostForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert("Publicación enviada a administrador para su aprobación.");
+                    const addPostModal = bootstrap.Modal.getInstance(document.getElementById('addPostModal'));
+                    addPostModal.hide();
+                    this.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

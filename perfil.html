@@ -59,24 +59,36 @@
 
     <main class="container my-5 flex-grow-1">
         <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card profile-card">
-                    <div class="card-body text-center">
-                        <img src="https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=1333787587186000000" alt="Foto de Perfil" class="profile-img mb-3">
-                        <h4 class="card-title fw-bold">Jose Cano Puga</h4>
-                        <p class="text-muted">@jose.cap</p>
-                        <hr>
-                        <ul class="list-unstyled text-start">
-                            <li><i class="fas fa-calendar-alt me-2"></i> Fecha de nacimiento: <span id="user-dob">05/10/1999</span></li>
-                            <li><i class="fas fa-venus-mars me-2"></i> Género: <span id="user-gender">Masculino</span></li>
-                            <li><i class="fas fa-globe-americas me-2"></i> País de nacimiento: <span id="user-country">México</span></li>
-                            <li><i class="fas fa-flag me-2"></i> Nacionalidad: <span id="user-nationality">Mexicana</span></li>
-                            <li><i class="fas fa-envelope me-2"></i> Correo electrónico: <span id="user-email">jose.cap@sports.com</span></li>
-                        </ul>
-                        <button class="btn btn-dark mt-3 w-100" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="fas fa-user-edit me-2"></i>Editar Perfil</button>
-                    </div>
-                </div>
+           <div class="col-md-4 mb-4">
+    <div class="card profile-card">
+        <div class="card-body text-center">
+            <img src="https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg" alt="Foto de Perfil" class="profile-img mb-3">
+            <h4 class="card-title fw-bold">Jose Cano Puga</h4>
+            <p class="text-muted">@jose.cap</p>
+            <hr>
+            <ul class="list-unstyled text-start">
+                <li><i class="fas fa-calendar-alt me-2"></i> Fecha de nacimiento: <span id="user-dob">05/10/1999</span></li>
+                <li><i class="fas fa-venus-mars me-2"></i> Género: <span id="user-gender">Masculino</span></li>
+                <li><i class="fas fa-globe-americas me-2"></i> País de nacimiento: <span id="user-country">México</span></li>
+                <li><i class="fas fa-flag me-2"></i> Nacionalidad: <span id="user-nationality">Mexicana</span></li>
+                <li><i class="fas fa-envelope me-2"></i> Correo electrónico: <span id="user-email">jose.cap@sports.com</span></li>
+            </ul>
+            
+            <!-- Botones de edición -->
+            <div class="d-grid gap-2 mt-3">
+                <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#editDataModal">
+                    <i class="fas fa-user-edit me-2"></i>Editar Datos
+                </button>
+                <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                    <i class="fas fa-key me-2"></i>Cambiar Contraseña
+                </button>
+                <button class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#changePhotoModal">
+                    <i class="fas fa-camera me-2"></i>Cambiar Foto
+                </button>
             </div>
+        </div>
+    </div>
+</div>
 
             <div class="col-md-8">
                 <h3 class="fw-bold mb-4">Mis Publicaciones</h3>
@@ -141,74 +153,128 @@
         </div>
     </main>
     
-    <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editProfileModalLabel">Editar Perfil</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="editProfileForm">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="edit-nombre" class="form-label">Nombre completo</label>
-                                    <input type="text" class="form-control" id="edit-nombre" placeholder="Nombre completo" value="Jose Cano Puga" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="edit-fechaNacimiento" class="form-label">Fecha de nacimiento</label>
-                                    <input type="date" class="form-control" id="edit-fechaNacimiento" value="1999-10-05" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="edit-genero" class="form-label">Género</label>
-                                    <select class="form-select" id="edit-genero" required>
-                                        <option value="masculino">Masculino</option>
-                                        <option value="femenino">Femenino</option>
-                                        <option value="otro">Otro</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="edit-paisNacimiento" class="form-label">País de nacimiento</label>
-                                    <input type="text" class="form-control" id="edit-paisNacimiento" placeholder="País de nacimiento" value="México" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="edit-nacionalidad" class="form-label">Nacionalidad</label>
-                                    <input type="text" class="form-control" id="edit-nacionalidad" placeholder="Nacionalidad" value="Mexicana" required>
-                                </div>
+    <!-- Reemplaza el modal existente en perfil.html con estos 3 modales -->
+
+<!-- MODAL 1: EDITAR DATOS -->
+<div class="modal fade" id="editDataModal" tabindex="-1" aria-labelledby="editDataModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editDataModalLabel">Editar Datos Personales</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editDataForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="edit-nombre" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="edit-nombre" required>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="edit-email" class="form-label">Correo electrónico</label>
-                                    <input type="email" class="form-control" id="edit-email" placeholder="Correo electrónico" value="jose.cap@sports.com" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="edit-password" class="form-label">Contraseña</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text toggle-password" data-target="#edit-password"><i class="fas fa-eye"></i></span>
-                                        <input type="password" class="form-control" id="edit-password" placeholder="Nueva contraseña" required>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="edit-confirm-password" class="form-label">Confirmar Contraseña</label>
-                                    <div class="input-group">
-                                        <span class="input-group-text toggle-password" data-target="#edit-confirm-password"><i class="fas fa-eye"></i></span>
-                                        <input type="password" class="form-control" id="edit-confirm-password" placeholder="Confirma tu nueva contraseña" required>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="edit-foto" class="form-label">Foto de perfil</label>
-                                    <input class="form-control" type="file" id="edit-foto">
-                                </div>
+                            <div class="mb-3">
+                                <label for="edit-fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="edit-fechaNacimiento" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="edit-genero" class="form-label">Género</label>
+                                <select class="form-select" id="edit-genero" required>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn btn-dark">Guardar Cambios</button>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="edit-paisNacimiento" class="form-label">País de nacimiento</label>
+                                <input type="text" class="form-control" id="edit-paisNacimiento" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="edit-nacionalidad" class="form-label">Nacionalidad</label>
+                                <input type="text" class="form-control" id="edit-nacionalidad" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="edit-email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="edit-email" required>
+                            </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-dark">Guardar Cambios</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- MODAL 2: CAMBIAR CONTRASEÑA -->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changePasswordModalLabel">Cambiar Contraseña</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="changePasswordForm">
+                    <div class="mb-3">
+                        <label for="current-password" class="form-label">Contraseña Actual</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="current-password" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="new-password" class="form-label">Nueva Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="new-password" required>
+                        </div>
+                        <small class="form-text text-muted">
+                            Mínimo 8 caracteres, con mayúscula, minúscula, número y símbolo.
+                        </small>
+                    </div>
+                    <div class="mb-4">
+                        <label for="confirm-new-password" class="form-label">Confirmar Nueva Contraseña</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="confirm-new-password" required>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-dark">Cambiar Contraseña</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL 3: CAMBIAR FOTO -->
+<div class="modal fade" id="changePhotoModal" tabindex="-1" aria-labelledby="changePhotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changePhotoModalLabel">Cambiar Foto de Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="changePhotoForm">
+                    <div class="mb-3">
+                        <label for="new-photo" class="form-label">Seleccionar nueva foto</label>
+                        <input class="form-control" type="file" id="new-photo" accept="image/jpeg,image/jpg,image/png,image/gif,image/webp" required>
+                        <small class="form-text text-muted">
+                            Formatos permitidos: JPG, PNG, GIF, WEBP. Máximo 5MB.
+                        </small>
+                    </div>
+                    <div id="photo-preview" class="border rounded p-3 text-center mb-3" style="min-height: 200px; display: flex; align-items: center; justify-content: center;">
+                        <p class="text-muted">Vista previa de la nueva foto</p>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-dark">Cambiar Foto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
     
     <footer class="bg-dark text-white py-4 mt-auto">
@@ -223,7 +289,9 @@
         </div>
     </footer>
     <script src="js/page-specific.js"></script>
+    <script src="js/auth.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/profile-handler.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

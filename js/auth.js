@@ -39,9 +39,6 @@
             // Usuario administrador
             navbarNav.innerHTML = `
                 <li class="nav-item">
-                    <a class="nav-link" href="publicar.html">Publicar</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="administrar.html">Administrar</a>
                 </li>
                 <li class="nav-item">
@@ -58,9 +55,6 @@
         } else {
             // Usuario normal
             navbarNav.innerHTML = `
-                <li class="nav-item">
-                    <a class="nav-link" href="publicar.html">Publicar</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="perfil.html">
                         <i class="fas fa-user me-1"></i>${user.primer_nombre}

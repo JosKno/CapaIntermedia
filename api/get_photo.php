@@ -2,6 +2,7 @@
 /**
  * API para obtener foto de perfil de usuario
  * Endpoint: GET /api/get_photo.php?id=1
+ * Versión sin caché para actualizaciones en tiempo real
  */
 
 // Incluir archivos necesarios
@@ -39,7 +40,11 @@ if ($foto === null || empty($foto)) {
     // Si no hay foto, devolver imagen por defecto
     http_response_code(404);
     
-    // Puedes redirigir a una imagen por defecto o devolver una imagen placeholder
+    // Headers para prevenir caché incluso del placeholder
+    header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+    header('Cache-Control: post-check=0, pre-check=0', false);
+    header('Pragma: no-cache');
+    header('Expires: 0');
     header('Content-Type: image/png');
     
     // Crear imagen placeholder simple
@@ -57,10 +62,13 @@ if ($foto === null || empty($foto)) {
 // Determinar tipo MIME
 $mime_type = FileHandler::getMimeTypeFromBlob($foto);
 
-// Enviar headers apropiados
+// Enviar headers para PREVENIR CACHÉ (importante para actualizaciones en tiempo real)
 header('Content-Type: ' . $mime_type);
 header('Content-Length: ' . strlen($foto));
-header('Cache-Control: max-age=86400'); // Cache por 1 día
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Cache-Control: post-check=0, pre-check=0', false);
+header('Pragma: no-cache');
+header('Expires: 0');
 
 // Enviar imagen
 echo $foto;
